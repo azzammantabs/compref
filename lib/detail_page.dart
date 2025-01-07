@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 class DetailPage extends StatelessWidget {
   final Company company;
 
-  const DetailPage({super.key, required this.company}) : super(key: key);
+  const DetailPage({Key? key, required this.company}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
