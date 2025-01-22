@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
       builder: (BuildContext context, BoxConstraints constraints){
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Top Global Company'),
+            title: const Text('Top Indonesian Company'),
           ),
           body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
