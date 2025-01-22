@@ -59,19 +59,20 @@ class CompRefList extends StatelessWidget {
                     flex: 2,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text(
-                            company.name,
-                            style: const TextStyle(fontSize: 16.0),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(company.address),
-                        ],
-                      ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              company.name,
+                              style: const TextStyle(fontSize: 16.0),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(company.address),
+                          ],
+                        ),
                     ),
                   )
                 ],
@@ -94,6 +95,7 @@ class CompRefGrid extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(24.0),
       child: GridView.count(
+        shrinkWrap: true,
         crossAxisCount: gridCount,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
@@ -106,13 +108,11 @@ class CompRefGrid extends StatelessWidget {
             },
             child: Card(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Expanded(
-                    child: Image.asset(
-                      company.imageAsset,
-                      fit: BoxFit.cover,
-                    ),
+                  Image.asset(
+                    company.imageAsset,
+                    fit: BoxFit.cover,
                   ),
                   const SizedBox(height: 8),
                   Padding(
@@ -125,10 +125,13 @@ class CompRefGrid extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
+                  Container(
+                    height: 50,
                     padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
                     child: Text(
-                      company.address
+                      company.address,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],
