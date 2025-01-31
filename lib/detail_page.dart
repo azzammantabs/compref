@@ -35,7 +35,13 @@ class DetailMobilePage extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                Image.asset(company.imageAsset),
+                AspectRatio(
+                  aspectRatio: 16 / 9,
+                  child: Image.asset(
+                    company.imageAsset,
+                    fit: BoxFit.cover,
+                  ),
+                ),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -84,10 +90,10 @@ class DetailMobilePage extends StatelessWidget {
                       const SizedBox(height: 8.0),
                       Flexible(
                         child: Text(
-                        company.address,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                          company.address,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
@@ -97,10 +103,10 @@ class DetailMobilePage extends StatelessWidget {
                       const SizedBox(height: 8.0),
                       Flexible(
                         child: Text(
-                        company.description,
-                        maxLines: 5,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                          company.description,
+                          maxLines: 5,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
@@ -185,7 +191,13 @@ class _DetailWebPageState extends State<DetailWebPage> {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(widget.company.imageAsset),
+                            child: AspectRatio(
+                              aspectRatio: 16 / 9,
+                              child: Image.asset(
+                                widget.company.imageAsset,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 16),
                         ],

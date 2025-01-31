@@ -36,7 +36,7 @@ var companyList = [
           'Huawei adalah penyedia infrastruktur teknologi informasi dan komunikasi (ICT) dan perangkat pintar global yang terkemuka. Dengan solusi yang terintegrasi di seluruh domain utama kami: jaringan telekomunikasi, TI, perangkat pintar, dan layanan cloud, kami berkomitmen untuk menghadirkan teknologi digital kepada setiap orang, rumah, dan organisasi untuk dunia yang cerdas dan terhubung sepenuhnya.',
       address:
           'Jl. Gatot Subroto No.6, RT.6/RW.1, Kuningan Bar., Kec. Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12710',
-      no: 'no',
+      no: '(021) 50818900',
       imageAsset: 'images/huawei.jpg'),
   Company(
       name: 'MPS KUD TANI MULYO LAMONGAN',
