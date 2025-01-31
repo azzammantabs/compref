@@ -71,13 +71,13 @@ class CompRefList extends StatelessWidget {
                       ],
                         ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        }
+      ),
     );
   }
 }
@@ -126,13 +126,13 @@ class CompRefGrid extends StatelessWidget {
                       ),
                       // set maxLines & Overflow untuk handle
                       // widget yang overflow.
-                      maxLines: 1,
+                      maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Container(
-                    height: 50,
-                    padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                    height: 60,
+                    padding: const EdgeInsets.only(top:2.0,left: 8.0, bottom: 2.0, right: 8.0),
                     child: Text(
                       company.address,
                       style: const TextStyle(

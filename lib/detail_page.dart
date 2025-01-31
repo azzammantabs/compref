@@ -80,29 +80,33 @@ class DetailMobilePage extends StatelessWidget {
                 children: <Widget>[
                   Row(
                     children: <Widget>[
-                      const Icon(Icons.calendar_today),
+                      const Icon(Icons.place),
                       const SizedBox(height: 8.0),
-                      Text(
+                      Flexible(
+                        child: Text(
                         company.address,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      const Icon(Icons.access_time),
-                      const SizedBox(height: 8.0),
-                      Text(
-                        company.description,
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
                   Row(
                     children: <Widget>[
-                      const Icon(Icons.monetization_on),
+                      const Icon(Icons.description),
+                      const SizedBox(height: 8.0),
+                      Flexible(
+                        child: Text(
+                        company.description,
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      const Icon(Icons.phone),
                       const SizedBox(height: 8.0),
                       Text(
                         company.no,
@@ -123,7 +127,7 @@ class DetailMobilePage extends StatelessWidget {
                   fontSize: 16.0,
                   fontFamily: 'Oxygen',
                 ),
-                maxLines: 3,
+                maxLines: 5,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -208,7 +212,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                               Row(
                                 children: <Widget>[
                                   const Icon(
-                                    Icons.calendar_today,
+                                    Icons.place,
                                     size: 24,
                                   ),
                                   const SizedBox(width: 8.0),
@@ -224,7 +228,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                               ),
                               Row(
                                 children: <Widget>[
-                                  const Icon(Icons.access_time),
+                                  const Icon(Icons.description),
                                   const SizedBox(width: 8.0),
                                   Flexible(
                                     child: Text(
@@ -238,7 +242,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
                               const SizedBox(height: 8.0),
                               Row(
                                 children: <Widget>[
-                                  const Icon(Icons.monetization_on),
+                                  const Icon(Icons.phone),
                                   const SizedBox(width: 8.0),
                                   Text(
                                     widget.company.no,
