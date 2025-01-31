@@ -9,14 +9,14 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
+      builder: (BuildContext context, BoxConstraints constraints) {
       return Scaffold(
         appBar: AppBar(
           title: const Text('Top Indonesian Company'),
         ),
         body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth <= 600) {
+              if (constraints.maxWidth <= 600) {
             return const CompRefList();
           } else if (constraints.maxWidth <= 1200) {
             return const CompRefGrid(gridCount: 4);
@@ -32,6 +32,7 @@ class MainPage extends StatelessWidget {
 class CompRefList extends StatelessWidget {
   const CompRefList({super.key});
 
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -68,6 +69,7 @@ class CompRefList extends StatelessWidget {
                         ),
                         Text(company.address),
                       ],
+                        ),
                     ),
                   ),
                 )
@@ -84,12 +86,13 @@ class CompRefGrid extends StatelessWidget {
   final int gridCount;
 
   const CompRefGrid({super.key, required this.gridCount});
-
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(24.0),
       child: GridView.count(
+        shrinkWrap: true,
         crossAxisCount: gridCount,
         crossAxisSpacing: 16,
         mainAxisSpacing: 16,
@@ -103,7 +106,6 @@ class CompRefGrid extends StatelessWidget {
             child: Card(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                // set MainAxisSize.min == wrap_context
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // set height untuk konsistensi di image nya,
@@ -128,7 +130,8 @@ class CompRefGrid extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  Padding(
+                  Container(
+                    height: 50,
                     padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
                     child: Text(
                       company.address,
