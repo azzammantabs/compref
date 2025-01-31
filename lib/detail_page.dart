@@ -40,7 +40,6 @@ class DetailMobilePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CircleAvatar(
                           backgroundColor: Colors.lightBlue,
@@ -76,13 +75,15 @@ class DetailMobilePage extends StatelessWidget {
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 16.0),
-              child: Row(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Column(
+                  Row(
                     children: <Widget>[
                       const Icon(Icons.calendar_today),
-                      const SizedBox(height: 8.0),
+                      const SizedBox(
+                        height: 8.0
+                      ),
                       Text(
                         company.address,
                         maxLines: 2,
@@ -90,7 +91,7 @@ class DetailMobilePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Column(
+                  Row(
                     children: <Widget>[
                       const Icon(Icons.access_time),
                       const SizedBox(height: 8.0),
@@ -101,7 +102,7 @@ class DetailMobilePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Column(
+                  Row(
                     children: <Widget>[
                       const Icon(Icons.monetization_on),
                       const SizedBox(height: 8.0),
@@ -181,8 +182,8 @@ class _DetailWebPageState extends State<DetailWebPage> {
                       child: Column(
                         children: [
                           ClipRRect(
-                            child: Image.asset(widget.company.imageAsset),
                             borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(widget.company.imageAsset),
                           ),
                           const SizedBox(height: 16),
                         ],
@@ -207,8 +208,6 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                 overflow: TextOverflow.ellipsis,
                               ),
                               Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: <Widget>[
