@@ -70,6 +70,8 @@ class DetailMobilePage extends StatelessWidget {
                   fontSize: 30.0,
                   fontFamily: 'Staatliches',
                 ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             Container(
@@ -82,7 +84,9 @@ class DetailMobilePage extends StatelessWidget {
                       const Icon(Icons.calendar_today),
                       const SizedBox(height: 8.0),
                       Text(
-                        company.address
+                        company.address,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
@@ -91,7 +95,9 @@ class DetailMobilePage extends StatelessWidget {
                       const Icon(Icons.access_time),
                       const SizedBox(height: 8.0),
                       Text(
-                        company.description
+                        company.description,
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
@@ -100,7 +106,9 @@ class DetailMobilePage extends StatelessWidget {
                       const Icon(Icons.monetization_on),
                       const SizedBox(height: 8.0),
                       Text(
-                        company.no
+                        company.no,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
@@ -116,6 +124,8 @@ class DetailMobilePage extends StatelessWidget {
                   fontSize: 16.0,
                   fontFamily: 'Oxygen',
                 ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -155,11 +165,13 @@ class _DetailWebPageState extends State<DetailWebPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const Text(
-                  'Wisata Bandung',
+                  'Top Company Indonesia',
                   style: TextStyle(
                     fontFamily: 'Staatliches',
                     fontSize: 32,
                   ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 32),
                 Row(
@@ -191,6 +203,8 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   fontSize: 30.0,
                                   fontFamily: 'Staatliches',
                                 ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                               ),
                               Row(
                                 mainAxisAlignment:
@@ -201,7 +215,9 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                       const Icon(Icons.calendar_today),
                                       const SizedBox(width: 8.0),
                                       Text(
-                                        widget.company.address
+                                        widget.company.address,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
                                       ),
                                     ],
                                   ),
@@ -213,7 +229,10 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   const Icon(Icons.access_time),
                                   const SizedBox(width: 8.0),
                                   Text(
-                                    widget.company.description                                  ),
+                                    widget.company.description,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,                                  
+                                  ),
                                 ],
                               ),
                               const SizedBox(height: 8.0),
@@ -222,7 +241,10 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                   const Icon(Icons.monetization_on),
                                   const SizedBox(width: 8.0),
                                   Text(
-                                    widget.company.no                                  ),
+                                    widget.company.no,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ],
                               ),
                               Container(
@@ -234,6 +256,8 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                     fontSize: 16.0,
                                     fontFamily: 'Oxygen',
                                   ),
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
                               ),
                             ],
