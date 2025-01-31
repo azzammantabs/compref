@@ -1,11 +1,11 @@
 import 'package:compref/model/company.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
   final Company company;
 
-  const DetailPage({Key? key, required this.company}) : super(key: key);
+  const DetailPage({super.key, required this.company});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class DetailPage extends StatelessWidget {
 class DetailMobilePage extends StatelessWidget {
   final Company company;
 
-  const DetailMobilePage({Key? key, required this.company}) : super(key: key);
-  
+  const DetailMobilePage({super.key, required this.company});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,9 +81,7 @@ class DetailMobilePage extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       const Icon(Icons.calendar_today),
-                      const SizedBox(
-                        height: 8.0
-                      ),
+                      const SizedBox(height: 8.0),
                       Text(
                         company.address,
                         maxLines: 2,
@@ -139,7 +137,7 @@ class DetailMobilePage extends StatelessWidget {
 class DetailWebPage extends StatefulWidget {
   final Company company;
 
-  const DetailWebPage({Key? key, required this.company}) : super(key: key);
+  const DetailWebPage({super.key, required this.company});
 
   @override
   _DetailWebPageState createState() => _DetailWebPageState();
@@ -208,17 +206,18 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                 overflow: TextOverflow.ellipsis,
                               ),
                               Row(
-                                children: [
-                                  Row(
-                                    children: <Widget>[
-                                      const Icon(Icons.calendar_today),
-                                      const SizedBox(width: 8.0),
-                                      Text(
-                                        widget.company.address,
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ],
+                                children: <Widget>[
+                                  const Icon(
+                                    Icons.calendar_today,
+                                    size: 24,
+                                  ),
+                                  const SizedBox(width: 8.0),
+                                  Flexible(
+                                    child: Text(
+                                      widget.company.address,
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                   const FavoriteButton(),
                                 ],
@@ -227,10 +226,12 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                 children: <Widget>[
                                   const Icon(Icons.access_time),
                                   const SizedBox(width: 8.0),
-                                  Text(
-                                    widget.company.description,
-                                    maxLines: 3,
-                                    overflow: TextOverflow.ellipsis,                                  
+                                  Flexible(
+                                    child: Text(
+                                      widget.company.description,
+                                      maxLines: 3,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -247,7 +248,8 @@ class _DetailWebPageState extends State<DetailWebPage> {
                                 ],
                               ),
                               Container(
-                                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 16.0),
                                 child: Text(
                                   widget.company.description,
                                   textAlign: TextAlign.justify,
@@ -282,7 +284,7 @@ class _DetailWebPageState extends State<DetailWebPage> {
 }
 
 class FavoriteButton extends StatefulWidget {
-  const FavoriteButton({Key? key}) : super(key: key);
+  const FavoriteButton({super.key});
 
   @override
   _FavoriteButtonState createState() => _FavoriteButtonState();
@@ -306,4 +308,3 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     );
   }
 }
-

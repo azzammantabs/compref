@@ -71,13 +71,13 @@ class CompRefList extends StatelessWidget {
                       ],
                         ),
                     ),
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
-          );
-        }
-      ),
+          ),
+        );
+      }),
     );
   }
 }
